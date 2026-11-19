@@ -272,8 +272,20 @@ footer b{color:var(--green-900)}
 .reveal-in{opacity:1;transform:none}
 @media (prefers-reduced-motion: reduce){
   .reveal{opacity:1;transform:none;transition:none}
+  .float-cta{animation:none}
   .faq-list details[open] .faq-body{animation:none}
 }
+
+/* плавающая кнопка вызова на телефоне */
+.float-cta{
+  display:none;position:fixed;left:14px;right:14px;bottom:14px;z-index:60;
+  height:54px;border-radius:999px;background:var(--mint);color:var(--green-900);
+  font-weight:800;font-size:1.02rem;align-items:center;justify-content:center;gap:10px;
+  text-decoration:none;box-shadow:0 14px 34px rgba(0,40,37,.45);
+}
+.float-cta.show{display:flex;animation:floatin .45s ease both}
+.float-cta svg{width:18px;height:18px}
+@keyframes floatin{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 
 /* responsive */
 @media (min-width:768px){
@@ -299,6 +311,7 @@ footer b{color:var(--green-900)}
   .top-city{display:none}
   .hero-card{margin:14px}
   .hero-frame{min-height:max(78vh,580px)}
+  footer{padding-bottom:104px}
 }
 @media (max-width:380px){
   .top-phone{font-size:.84rem;gap:6px}
@@ -465,10 +478,10 @@ footer b{color:var(--green-900)}
   <div class="container">
     <h2>Служба в цифрах</h2>
     <div class="stats">
-      <div class="stat"><b>5 мин</b><span>ответ на заявку</span></div>
+      <div class="stat"><b data-count="5" data-suffix=" мин">5 мин</b><span>ответ на заявку</span></div>
       <div class="stat"><b>24/7</b><span>приём, включая праздники</span></div>
-      <div class="stat"><b>2300 ₽</b><span>откачка в городе</span></div>
-      <div class="stat"><b>15 мин</b><span>предел тишины, дальше служба звонит сама</span></div>
+      <div class="stat"><b data-count="2300" data-suffix=" ₽">2300 ₽</b><span>откачка в городе</span></div>
+      <div class="stat"><b data-count="15" data-suffix=" мин">15 мин</b><span>предел тишины, дальше служба звонит сама</span></div>
     </div>
     <!-- TODO(клиент): заменить заглушки на настоящие отзывы после первых вызовов -->
     <div class="reviews">
@@ -586,7 +599,48 @@ footer b{color:var(--green-900)}
   }, { threshold: .12, rootMargin: '0px 0px -40px' });
   els.forEach(function(el){ io.observe(el); });
 })();
+
+/* счётчик цифр */
+(function(){
+  var nums = document.querySelectorAll('[data-count]');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!nums.length || reduce || !('IntersectionObserver' in window)) return;
+  var io2 = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      var el = e.target;
+      io2.unobserve(el);
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      var t0 = null, dur = 1100;
+      function step(ts){
+        if (t0 === null) t0 = ts;
+        var p = Math.min((ts - t0) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased).toLocaleString('ru-RU') + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }, { threshold: .5 });
+  nums.forEach(function(el){ io2.observe(el); });
+})();
+
+/* плавающая кнопка после первого экрана */
+(function(){
+  var fcta = document.querySelector('.float-cta');
+  if (!fcta) return;
+  var tick = function(){ fcta.classList.toggle('show', window.scrollY > 560); };
+  window.addEventListener('scroll', tick, {passive:true});
+  tick();
+})();
 </script>
+
+<!-- TODO(клиент): вставить реальный номер телефона -->
+<a class="float-cta" href="tel:+7XXXXXXXXXX">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z"/></svg>
+  Вызвать машину
+</a>
 
 </body>
 </html>
