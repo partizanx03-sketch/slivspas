@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>СливСпас: откачка ям и септиков в Улан-Удэ. Ответ за 5 минут, цена сразу</title>
+<meta name="description" content="Откачка ям и септиков, Улан-Удэ и пригород. Ответ за 5 минут, цена сразу, машина сегодня. Круглосуточно.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green-900:#004D49;
+  --green-700:#068466;
+  --mint:#05D893;
+  --mint-soft:#E9F7F2;
+  --sand:#EBCEB9;
+  --ink:#1E3D39;
+  --ink-soft:#4A6661;
+  --paper:#FFFFFF;
+  --radius:24px;
+  --radius-big:28px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Manrope',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  font-size:17px;
+  line-height:1.6;
+  overflow-x:clip;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;display:block}
+.container{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:clamp(56px,9vw,110px) 0}
+h1,h2,h3{color:var(--green-900);font-weight:800;letter-spacing:-.02em;line-height:1.12}
+h2{font-size:clamp(1.9rem,3.6vw,3rem)}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--green-700);margin-bottom:18px;
+}
+.kicker::before{content:"";width:22px;height:3px;border-radius:3px;background:var(--mint)}
+.lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--ink-soft);max-width:640px;margin-top:16px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:52px;padding:14px 34px;border-radius:999px;
+  background:var(--green-900);color:#fff;text-decoration:none;
+  font-weight:800;font-size:1.05rem;border:none;cursor:pointer;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(5,216,147,.35)}
+.btn-light{background:#fff;color:var(--green-900)}
+.btn-light:hover{box-shadow:0 12px 28px rgba(0,0,0,.25)}
+.btn svg{width:18px;height:18px}
+
+/* header */
+.top{
+  position:absolute;top:0;left:0;right:0;z-index:10;
+  padding:18px 0;
+}
+.top .container{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.55rem;color:#fff;text-decoration:none;letter-spacing:-.02em;text-shadow:0 1px 12px rgba(0,40,37,.55)}
+.logo svg{width:40px;height:40px;color:var(--mint);filter:drop-shadow(0 1px 6px rgba(0,40,37,.5))}
+.logo b{color:var(--mint)}
+.top-right{display:flex;align-items:center;gap:14px}
+.top-city{color:rgba(255,255,255,.85);font-size:.9rem;font-weight:500}
+.top-phone{
+  display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 14px;
+  color:#fff;text-decoration:none;font-weight:800;font-size:.95rem;
+  text-shadow:0 1px 10px rgba(0,40,37,.65),0 0 24px rgba(0,40,37,.4);
+}
+.top-phone svg{width:16px;height:16px}
+
+/* hero */
+.hero{padding:14px 0 clamp(56px,9vw,110px)}
+.hero-frame{
+  position:relative;border-radius:var(--radius-big);overflow:hidden;
+  min-height:min(640px,86vh);display:flex;align-items:flex-end;
+}
+.hero-frame>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-frame::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,40,37,.60) 0%,rgba(0,40,37,.10) 45%,rgba(0,40,37,.45) 100%);
+}
+.hero-card{
+  position:relative;z-index:2;margin:clamp(18px,4vw,48px);
+  max-width:640px;border-radius:20px;padding:clamp(22px,4vw,40px);
+  background:rgba(255,255,255,.88);
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+}
+@supports not (backdrop-filter:blur(1px)){.hero-card{background:rgba(255,255,255,.95)}}
+.hero-card h1{font-size:clamp(2.3rem,5.6vw,4.8rem)}
+.hero-card h1 .l2{color:var(--green-700)}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .hero-card h1 .l2{
+    background:linear-gradient(90deg,var(--green-900) 0%,var(--green-700) 55%,var(--mint) 120%);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+}
+.hero-card p{margin:16px 0 24px;font-size:clamp(1rem,1.5vw,1.15rem);color:var(--ink-soft);font-weight:500}
+.hero-place{display:flex;align-items:center;gap:8px;font-weight:800;font-size:.88rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green-700);margin-bottom:14px}
+.hero-place svg{width:16px;height:16px;flex:none}
+.hero-micro{display:flex;align-items:center;gap:10px;margin-top:14px;color:var(--green-700);font-weight:700;font-size:.95rem}
+.hero-micro svg{width:18px;height:18px;flex:none}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{
+  display:inline-flex;align-items:center;padding:8px 14px;border-radius:999px;
+  background:var(--mint-soft);color:var(--green-900);font-weight:700;font-size:.85rem;
+}
+
+/* problem */
+.pain-grid{display:grid;gap:16px;margin-top:36px}
+.pain{
+  background:var(--paper);border:1.5px solid #DCEBE5;border-radius:var(--radius);
+  padding:26px 26px 22px;
+}
+.pain h3{font-size:1.15rem;margin-bottom:8px}
+.pain p{color:var(--ink-soft)}
+.bridge{
+  margin-top:36px;padding:24px 28px;border-radius:var(--radius);
+  background:var(--mint-soft);color:var(--green-900);font-weight:700;
+  font-size:clamp(1.1rem,2vw,1.35rem);line-height:1.5;
+}
+.bridge b{color:var(--green-700)}
+
+/* solution */
+.feat-grid{display:grid;gap:16px;margin-top:36px}
+.feat{
+  background:var(--mint-soft);border-radius:var(--radius);padding:26px;
+}
+.feat-icon{
+  width:48px;height:48px;border-radius:14px;background:#fff;
+  display:flex;align-items:center;justify-content:center;color:var(--green-700);
+  margin-bottom:16px;
+}
+.feat-icon svg{width:24px;height:24px}
+.feat h3{font-size:1.12rem;margin-bottom:8px}
+.feat p{color:var(--ink-soft)}
+.shot{
+  margin-top:36px;border-radius:var(--radius-big);overflow:hidden;
+}
+.shot img{width:100%;height:auto}
+.shot figcaption{
+  padding:14px 22px;background:var(--mint-soft);
+  color:var(--green-900);font-weight:700;font-size:.95rem;
+}
+
+/* steps */
+.steps-wrap{display:grid;gap:32px;margin-top:36px;align-items:start}
+.steps{display:grid;gap:14px}
+.step{
+  display:flex;gap:18px;align-items:flex-start;
+  background:var(--paper);border:1.5px solid #DCEBE5;border-radius:var(--radius);padding:24px;
+}
+.step-num{
+  flex:none;width:44px;height:44px;border-radius:999px;
+  background:var(--green-900);color:#fff;font-weight:800;font-size:1.15rem;
+  display:flex;align-items:center;justify-content:center;
+}
+.step h3{font-size:1.15rem;margin-bottom:6px;padding-top:8px}
+.step p{color:var(--ink-soft)}
+.step-img{border-radius:var(--radius-big);overflow:hidden}
+.step-img img{width:100%;height:100%;object-fit:cover}
+.pay-line{
+  margin-top:18px;display:inline-flex;align-items:center;gap:10px;
+  background:var(--mint-soft);border-radius:999px;padding:12px 22px;
+  color:var(--green-900);font-weight:700;
+}
+.pay-line svg{width:18px;height:18px;color:var(--green-700)}
+
+/* proof */
+.watermark{
+  position:relative;overflow:hidden;
+}
+.watermark::before{
+  content:"СливСпас";
+  position:absolute;left:50%;top:38%;transform:translateX(-50%);
+  font-weight:800;font-size:clamp(7rem,22vw,19rem);letter-spacing:-.04em;
+  color:var(--mint);opacity:.09;white-space:nowrap;pointer-events:none;
+}
+.watermark .container{position:relative;z-index:2}
+.proof{background:var(--mint-soft)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px}
+.stat{background:#fff;border-radius:var(--radius);padding:24px;text-align:left}
+.stat b{display:block;font-size:clamp(1.9rem,3.4vw,2.6rem);color:var(--green-900);font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.stat span{color:var(--ink-soft);font-weight:600;font-size:.95rem}
+.reviews{display:grid;gap:16px;margin-top:36px}
+.review{
+  border:1.5px dashed var(--sand);border-radius:var(--radius);
+  padding:26px;color:var(--ink-soft);background:#FBF3EC;
+}
+.review .qmark{color:var(--green-700);font-size:2.6rem;line-height:1;font-weight:800;display:block;margin-bottom:6px}
+.review p{font-weight:500}
+.note-line{margin-top:16px;color:var(--ink-soft);font-size:.95rem}
+
+/* price */
+.plans{display:grid;gap:16px;margin-top:36px}
+.plan{
+  border:1.5px solid #DCEBE5;border-radius:var(--radius-big);padding:30px;
+  background:var(--paper);
+}
+.plan-hot{background:var(--green-900);color:#fff;border-color:var(--green-900)}
+.plan-hot h3{color:#fff}
+.plan-tag{
+  display:inline-block;padding:6px 14px;border-radius:999px;
+  background:var(--mint);color:var(--green-900);font-weight:800;font-size:.8rem;
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;
+}
+.plan:not(.plan-hot) .plan-tag{background:var(--mint-soft);color:var(--green-700)}
+.plan-price{font-size:clamp(2.2rem,4vw,3rem);font-weight:800;color:var(--green-900);letter-spacing:-.02em;line-height:1.1;margin:6px 0 10px}
+.plan-hot .plan-price{color:#fff}
+.plan-price small{font-size:.45em;font-weight:700;color:inherit;opacity:.7}
+.plan p{color:var(--ink-soft)}
+.plan-hot p{color:rgba(255,255,255,.85)}
+.bonus-grid{display:grid;gap:16px;margin-top:16px}
+.bonus{
+  display:flex;gap:14px;align-items:flex-start;
+  background:var(--mint-soft);border-radius:var(--radius);padding:20px 24px;
+}
+.bonus svg{width:22px;height:22px;flex:none;color:var(--green-700);margin-top:2px}
+.bonus p{font-weight:600;color:var(--green-900)}
+.guarantee{
+  margin-top:28px;display:flex;gap:12px;align-items:flex-start;
+  font-weight:600;color:var(--green-900);
+}
+.guarantee svg{width:20px;height:20px;flex:none;color:var(--green-700);margin-top:3px}
+.mid-cta{margin-top:34px;text-align:center}
+
+/* faq */
+.faq-list{margin-top:36px;display:grid;gap:12px}
+.faq-list details{border:1.5px solid #DCEBE5;border-radius:var(--radius);background:var(--paper)}
+.faq-list summary{
+  cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:20px 24px;font-weight:800;color:var(--green-900);font-size:1.05rem;
+}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{
+  content:"+";flex:none;width:32px;height:32px;border-radius:999px;
+  background:var(--mint-soft);color:var(--green-700);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.2rem;
+  transition:transform .2s ease;
+}
+.faq-list details[open] summary::after{transform:rotate(45deg)}
+.faq-list .faq-body{padding:0 24px 22px;color:var(--ink-soft)}
+.faq-list details[open] .faq-body{animation:faqfade .25s ease}
+@keyframes faqfade{from{opacity:0}to{opacity:1}}
+
+/* final cta */
+.final{background:var(--green-900);color:#fff}
+.final h2{color:#fff;font-size:clamp(2rem,4.4vw,3.4rem);max-width:720px}
+.final p{color:rgba(255,255,255,.85);font-size:clamp(1.05rem,1.6vw,1.25rem);margin-top:16px;max-width:560px}
+.final .btn{margin-top:30px}
+.final-phone{
+  margin-top:20px;font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:800;color:var(--mint);
+  text-decoration:none;display:inline-block;
+}
+.final-note{margin-top:10px;color:rgba(255,255,255,.65);font-size:.95rem}
+
+/* footer */
+footer{padding:34px 0;color:var(--ink-soft);font-size:.95rem}
+footer .container{display:grid;gap:6px}
+footer b{color:var(--green-900)}
+.demo-note{opacity:.75}
+
+/* появление секций при прокрутке */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.reveal-in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .faq-list details[open] .faq-body{animation:none}
+}
+
+/* responsive */
+@media (min-width:768px){
+  .pain-grid{grid-template-columns:repeat(3,1fr)}
+  .feat-grid{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .reviews{grid-template-columns:repeat(3,1fr)}
+  .plans{grid-template-columns:repeat(2,1fr)}
+  .bonus-grid{grid-template-columns:repeat(3,1fr)}
+  .steps-wrap{grid-template-columns:1.1fr .9fr;align-items:stretch}
+}
+@media (min-width:1100px){
+  .feat-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media (max-width:767px){
+  .top{padding:14px 0}
+  .top .container{gap:10px}
+  .logo{font-size:1.2rem;gap:8px}
+  .logo svg{width:30px;height:30px}
+  .top-phone{padding:8px 8px;font-size:.88rem}
+  .top-city{display:none}
+  .hero-card{margin:14px}
+  .hero-frame{min-height:78vh}
+}
+@media (max-width:380px){
+  .top-phone{font-size:.84rem;gap:6px}
+  .top-phone svg{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="container">
+    <a class="logo" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 3c3.5 4.2 6 7.4 6 10.4A6 6 0 0 1 6 13.4C6 10.4 8.5 7.2 12 3z"/>
+        <path d="M9.5 13.5a2.5 2.5 0 0 0 2.5 2.5"/>
+      </svg>
+      Слив<b>Спас</b>
+    </a>
+    <div class="top-right">
+      <span class="top-city">Улан-Удэ и пригород</span>
+      <!-- TODO(клиент): вставить реальный номер телефона -->
+      <a class="top-phone" href="tel:+7XXXXXXXXXX">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z"/></svg>
+        +7 (___) ___-__-__
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-frame">
+      <!-- TODO(клиент): заменить на реальное фото, это демо-заглушка -->
+      <img src="img/hero.jpg" width="1024" height="480" alt="Машина СливСпас у дома клиента">
+      <div class="hero-card">
+        <div class="hero-place">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Улан-Удэ и пригород
+        </div>
+        <h1>Мы откачиваем.<br><span class="l2">Вы отдыхаете.</span></h1>
+        <p>Откачка ям и септиков: ответ за 5 минут, цена сразу, машина сегодня.</p>
+        <a class="btn" href="tel:+7XXXXXXXXXX">Заказать</a>
+        <div class="hero-micro">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          Ответим за 5 минут. Можем и ночью
+        </div>
+        <div class="hero-chips">
+          <span class="chip">2300 ₽ город</span>
+          <span class="chip">Проверенные машины</span>
+          <span class="chip">Машина сегодня</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Знакомая ситуация</span>
+    <h2>Яма переполнилась?</h2>
+    <p class="lead">Вчера это было ещё не срочно. Вы начинаете искать машину.</p>
+    <div class="pain-grid">
+      <div class="pain">
+        <h3>Не берут трубку, звонки в никуда?</h3>
+        <p>Вечер уходит на поиск машины.</p>
+      </div>
+      <div class="pain">
+        <h3>Цена растёт на месте</h3>
+        <p>Назвали одну сумму по телефону, приехали с другой.</p>
+      </div>
+      <div class="pain">
+        <h3>Завтра без воды</h3>
+        <p>Пока машина едет, дом стоит.</p>
+      </div>
+    </div>
+    <div class="bridge">Один звонок СливСпасу вместо десяти номеров. Ответ за <b>5 минут</b>. Цена сразу. Машина сегодня.</div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Чем отличается служба</span>
+    <h2>Проверенная машина на каждый район</h2>
+    <p class="lead">СливСпас это круглосуточный приём заявок и каскад машин по зонам: сначала ваш район, потом соседние посёлки, дальше весь город и пригород.</p>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <h3>Приём 24/7</h3>
+        <p>Заявки круглосуточно, включая выходные и праздники. Ответ приходит за 5 минут.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        </div>
+        <h3>Каскад по районам</h3>
+        <p>На каждый район города и посёлки пригорода держим проверенную машину. От посёлка к соседним зонам.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3>Проверка до допуска</h3>
+        <p>Проверяем машину, объём, зону и статус до выезда. Отзывы собираем после каждого вызова.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 8-3 8h18s-3-1-3-8"/><path d="M10 21h4"/></svg>
+        </div>
+        <h3>Тишина запрещена</h3>
+        <p>Если за 15 минут никто не взял заявку, служба сама звонит и называет план.</p>
+      </div>
+    </div>
+    <figure class="shot">
+      <!-- TODO(клиент): заменить на реальное фото: дневной свет, машина у дома, шланг у люка. Сейчас демо-заглушка -->
+      <img src="img/cascade.jpg" width="940" height="531" loading="lazy" alt="Машина службы на выезде">
+      <figcaption>Машины ищутся каскадом: ваш район, соседние зоны, весь город.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Три шага</span>
+    <h2>От звонка до пустой ямы</h2>
+    <div class="steps-wrap">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Звонок или сообщение</h3>
+            <p>Называете адрес и тип ямы. Это две минуты.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Цена сразу</h3>
+            <p>Называем цену в ответе. На месте она та же.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Машина сегодня</h3>
+            <p>Время приезда приходит сообщением. Яма пустая, дом снова работает.</p>
+          </div>
+        </div>
+        <div class="pay-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="3"/><circle cx="12" cy="12" r="2.5"/></svg>
+          Наличными или переводом. Цена одна.
+        </div>
+      </div>
+      <div class="step-img">
+        <!-- TODO(клиент): заменить на реальное фото, это демо-заглушка -->
+        <img src="img/work.jpg" width="940" height="531" loading="lazy" alt="Открытый люк септика и шланг во дворе дома">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="watermark proof">
+  <div class="container">
+    <h2>Служба в цифрах</h2>
+    <div class="stats">
+      <div class="stat"><b>5 мин</b><span>ответ на заявку</span></div>
+      <div class="stat"><b>24/7</b><span>приём, включая праздники</span></div>
+      <div class="stat"><b>2300 ₽</b><span>откачка в городе</span></div>
+      <div class="stat"><b>15 мин</b><span>предел тишины, дальше служба звонит сама</span></div>
+    </div>
+    <!-- TODO(клиент): заменить заглушки на настоящие отзывы после первых вызовов -->
+    <div class="reviews">
+      <div class="review"><span class="qmark">&laquo;</span><p>Здесь появится отзыв после первых вызовов. Покажем район и дату.</p></div>
+      <div class="review"><span class="qmark">&laquo;</span><p>Отзывы ставим как есть, без правок. Место готово.</p></div>
+      <div class="review"><span class="qmark">&laquo;</span><p>Здесь будет третий отзыв: район, дата, текст клиента.</p></div>
+    </div>
+    <p class="note-line">Настоящих отзывов пока нет, служба стартует. Соберём после первых вызовов и поставим сюда как есть.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Цена и бонусы</span>
+    <h2>Цена та, что назвали в начале</h2>
+    <div class="plans">
+      <div class="plan plan-hot">
+        <span class="plan-tag">Город</span>
+        <div class="plan-price">2300 ₽</div>
+        <p>Откачка ямы или септика. Наличными или переводом, цена одна. Без наценки на месте.</p>
+      </div>
+      <div class="plan">
+        <span class="plan-tag">Пригород</span>
+        <div class="plan-price">Цена сразу</div>
+        <p>Стоимость называем в ответе на заявку. Машина ищется каскадом: ваш посёлок, соседние зоны.</p>
+      </div>
+    </div>
+    <div class="bonus-grid">
+      <div class="bonus">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="3"/><path d="M12 8v13M3 12h18M12 8c-2 0-4-1-4-3a2 2 0 0 1 4 0M12 8c2 0 4-1 4-3a2 2 0 0 0-4 0"/></svg>
+        <p>Каждый 10-й вызов бесплатно, счётчик ведётся по адресу</p>
+      </div>
+      <div class="bonus">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.2 3.4-5 6.5-5s5.7 1.8 6.5 5"/><path d="M17.5 4.5v6M14.5 7.5h6"/></svg>
+        <p>Приведи соседа: скидка 200 ₽ обоим</p>
+      </div>
+      <div class="bonus">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 11h18M9.5 15.5l2 2 3.5-3.5"/></svg>
+        <p>Сами напомним, когда яме пора на график откачки</p>
+      </div>
+    </div>
+    <div class="guarantee">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+      <span>Не устроило качество: фиксируем и заменяем машину.</span>
+    </div>
+    <div class="mid-cta">
+      <a class="btn" href="tel:+7XXXXXXXXXX">Вызвать машину сегодня</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Вопросы и ответы</span>
+    <h2>Спокойные ответы на главные вопросы</h2>
+    <div class="faq-list">
+      <details>
+        <summary>Сколько ждать ответа?</summary>
+        <div class="faq-body">Ответ приходит за 5 минут. Приём круглосуточно, включая выходные и праздники.</div>
+      </details>
+      <details>
+        <summary>Сколько стоит откачка?</summary>
+        <div class="faq-body">В городе 2300 ₽. В пригороде цену называем сразу в ответе на заявку. Цена на месте не меняется.</div>
+      </details>
+      <details>
+        <summary>Кто приедет?</summary>
+        <div class="faq-body">Проверенная машина из каскада вашего района. До выезда проверяем объём, зону и статус. После вызова спросим, всё ли было в порядке.</div>
+      </details>
+      <details>
+        <summary>Что если машину не нашли?</summary>
+        <div class="faq-body">Машины распределены по зонам заранее. Если за 15 минут заявку никто не взял, служба сама звонит и называет план.</div>
+      </details>
+      <details>
+        <summary>Как оплатить?</summary>
+        <div class="faq-body">Наличными или переводом. Цена та, что назвали в начале.</div>
+      </details>
+      <details>
+        <summary>Выезжаете в пригород?</summary>
+        <div class="faq-body">Да. Весь город и пригород, каскад по зонам: от вашего посёлка к соседним.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="container">
+    <h2>Яма переполнилась? Звоните СливСпасу</h2>
+    <p>Ответим за 5 минут. Можем и ночью. Цену назовём сразу. Машина приезжает сегодня.</p>
+    <a class="btn btn-light" href="tel:+7XXXXXXXXXX">Заказать</a>
+    <div>
+      <!-- TODO(клиент): вставить реальный номер телефона -->
+      <a class="final-phone" href="tel:+7XXXXXXXXXX">+7 (___) ___-__-__</a>
+      <div class="final-note">Круглосуточно, Улан-Удэ и пригород</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div><b>СливСпас</b> · Откачка ям и септиков · Улан-Удэ и пригород · slivspas.ru</div>
+    <div class="demo-note">Фото на странице сейчас демо, к запуску заменим на настоящие снимки службы.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('section:not(.hero) .container');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  els.forEach(function(el){ el.classList.add('reveal'); });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('reveal-in'); io.unobserve(e.target); }
+    });
+  }, { threshold: .12, rootMargin: '0px 0px -40px' });
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+</body>
+</html>
