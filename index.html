@@ -724,11 +724,22 @@ footer b{color:var(--green-900)}
   Вызвать машину
 </a>
 
+<div class="cookie-bar" id="cookieBar">
+  <p>Мы используем файлы cookie для работы сайта и аналитики посещаемости. Продолжая, вы соглашаетесь с использованием технических cookie. Аналитические cookie подключаются только после вашего согласия. Подробнее: <a href="legal/cookies.html">Политика cookie</a></p>
+  <div class="cookie-btns">
+    <button id="cookieAll" type="button">Принять все</button>
+    <button id="cookieNeed" type="button">Только необходимые</button>
+  </div>
+</div>
+
 <script>
 (function(){
   var MID=114679656;
+  var GAID='G-KKYZ6ZTXBH';
   var st=null;
   try{st=localStorage.getItem('sp-consent');}catch(e){}
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
   var bar=document.getElementById('cookieBar');
   function metrika(){
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -736,17 +747,19 @@ footer b{color:var(--green-900)}
     (window,document,'script','https://mc.yandex.ru/watch/'+MID,'ym');
     ym(MID,'init',MID,{clickmap:true,trackLinks:true,accurateTrackBounce:true});
   }
+  function ganalytics(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GAID;document.head.appendChild(s);gtag('js',new Date());gtag('config',GAID);}
+
   function goal(){
-    if(st==='all'){try{ym(MID,'reachGoal','order_click');}catch(e){}}
+    if(st==='all'){try{ym(MID,'reachGoal','order_click');}catch(e){}try{gtag('event','order_click');}catch(e){}}
   }
   if(st==='all'){
     if(bar){bar.style.display='none';}
-    metrika();
+    metrika();ganalytics();
   }else if(bar){
     bar.style.display='flex';
     document.getElementById('cookieAll').addEventListener('click',function(){
       st='all';try{localStorage.setItem('sp-consent','all');}catch(e){}
-      bar.style.display='none';metrika();
+      bar.style.display='none';metrika();ganalytics();
     });
     document.getElementById('cookieNeed').addEventListener('click',function(){
       st='needed';try{localStorage.setItem('sp-consent','needed');}catch(e){}
@@ -756,13 +769,5 @@ footer b{color:var(--green-900)}
   var orders=document.querySelectorAll('a[href*="max.ru/slivspas03"]');
   for(var j=0;j<orders.length;j++){orders[j].addEventListener('click',goal);}
 })();
-</script>
-<div class="cookie-bar" id="cookieBar">
-  <p>Мы используем файлы cookie для работы сайта и аналитики посещаемости. Продолжая, вы соглашаетесь с использованием технических cookie. Аналитические cookie подключаются только после вашего согласия. Подробнее: <a href="legal/cookies.html">Политика cookie</a></p>
-  <div class="cookie-btns">
-    <button id="cookieAll" type="button">Принять все</button>
-    <button id="cookieNeed" type="button">Только необходимые</button>
-  </div>
-</div>
-</body>
+</script></body>
 </html>
